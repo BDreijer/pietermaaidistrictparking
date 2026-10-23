@@ -92,8 +92,11 @@
   /* Locatie: kaart + gegevens */
   .section--sand { background: var(--sand); }
   .location { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
-  .map { aspect-ratio: 4 / 3; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); background: var(--white); }
+  .map { aspect-ratio: 4 / 3; border-radius: 20px; position: relative; overflow: hidden; border: 1px solid var(--line); background: var(--white); }
   .map iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .map-pin { position: absolute; left: 14px; bottom: 14px; display: flex; align-items: center; gap: .6rem; padding: .5rem .9rem .5rem .5rem; border-radius: 12px;
+    background: var(--navy); color: var(--white); font-size: .88rem; font-weight: 600; text-decoration: none; box-shadow: 0 6px 20px rgba(10,22,40,.3); }
+  .map-pin span { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; background: var(--teal); font-weight: 700; }
   .details { margin-top: 1.8rem; background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: .6rem 1.6rem; }
   .detail { display: flex; align-items: center; gap: 14px; padding: .85rem 0; border-bottom: 1px solid var(--line); font-size: .97rem; }
   .detail:last-child { border-bottom: 0; }
@@ -210,7 +213,8 @@
   <section class="section section--sand" id="location">
     <div class="wrap location">
       <div class="map">
-        <iframe src="https://maps.google.com/maps?q=Willem%20Leestraat%2C%20Pietermaai%2C%20Willemstad&amp;z=17&amp;output=embed" title="Map: Willem Leestraat, Pietermaai, Willemstad" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://maps.google.com/maps?q=12.103630,-68.930256&amp;z=18&amp;output=embed" title="Map: parking entrance on Willem Leestraat, Pietermaai" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a class="map-pin" href="https://www.google.com/maps/dir/?api=1&amp;destination=12.103630,-68.930256" target="_blank" rel="noopener"><span>P</span>Parking entrance &middot; Directions</a>
       </div>
       <div>
         <span class="label">Location</span>
@@ -236,8 +240,8 @@
     </div>
     <div class="contact-list">
       <a class="contact-row" href="https://wa.me/59995286118?text=Hi%2C%20I%27m%20interested%20in%20renting%20a%20parking%20space%20in%20Pietermaai."><span class="ci wa"><svg class="icon"><use href="#i-chat"/></svg></span><span><small>WhatsApp</small><b>+5999 528 6118</b></span><svg class="icon arrow"><use href="#i-right"/></svg></a>
-      <a class="contact-row" href="tel:+59995286118"><span class="ci"><svg class="icon"><use href="#i-phone"/></svg></span><span><small>Call us</small><b>+5999 528 6118</b></span><svg class="icon arrow"><use href="#i-right"/></svg></a>
-      <a class="contact-row" href="mailto:info@dhcuracao.com?subject=Parking%20Space%20Inquiry"><span class="ci mail"><svg class="icon"><use href="#i-mail"/></svg></span><span><small>Email</small><b>info@dhcuracao.com</b></span><svg class="icon arrow"><use href="#i-right"/></svg></a>
+      <div class="contact-row"><span class="ci"><svg class="icon"><use href="#i-phone"/></svg></span><span><small>Call us</small><b>+5999 528 6118</b></span><svg class="icon arrow"><use href="#i-right"/></svg></div>
+      <div class="contact-row"><span class="ci mail"><svg class="icon"><use href="#i-mail"/></svg></span><span><small>Email</small><b>info@dhcuracao.com</b></span><svg class="icon arrow"><use href="#i-right"/></svg></div>
     </div>
   </div>
 </section>
